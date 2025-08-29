@@ -1,42 +1,359 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Colors */
+:root{
+  --fillLight: #bdbdbd;
+  --fillDark: #a0a0a0;
+  --fillBottom: #bbbbbb;
+  --innerBorder: #d0d0d0;
+  --text: #000000;
+  --border: #0b0b0b;
+  --glow: #a9a9a995;
+  --fillLightHover: #c7c7c7;
+  --fillDarkHover: #8f8f8f;
+  --fillBottomHover: #adadad;
+  --fillLightActive: #b4b4b4;
+  --fillDarkActive: #797979;
+  --fillBottomActive: #999999;
+  --innerBorderActive: #bebebe;
+  --fillLightDisabled: #b1b1b1;
+  --fillDarkDisabled: #a4a4a4;
+  --fillBottomDisabled: #a7a6a6;
+  --innerBorderDisabled: #bebebe;
+  --textDisabled: #525252;
+  --borderDisabled: #555555;
+}
+.dark {
+  --fillLight: #4e4e4e;
+  --fillDark: #2a2a2a;
+  --fillBottom: #494949;
+  --innerBorder: #5e5e5e;
+  --text: #FFFFFF;
+  --border: #080d21;
+  --glow: #181818;
+  --fillLightHover: #636363;
+  --fillDarkHover: #1a1a1a;
+  --fillBottomHover: #494949;
+  --fillLightActive: #484848;
+  --fillDarkActive: #060606;
+  --fillBottomActive: #292929;
+  --textActive: #E5E5E5;
+  --innerBorderActive: #474747;
+  --fillLightDisabled: #424242;
+  --fillDarkDisabled: #373737;
+  --fillBottomDisabled: #494949;
+  --innerBorderDisabled: #5e5e5e;
+  --textDisabled: #b2b2b2;
+  --borderDisabled: #434343;
+}
+.defaultAccent {
+  --fillLight: #b6bfcf;
+  --fillDark: #999ea8;
+  --fillBottom: #8fa7ce;
+  --innerBorder: #80a2d8;
+  --text: #000000;
+  --border: #0b0b0b;
+  --glow: #607aa3ff;
+  --fillLightHover: #bbc8dc;
+  --fillDarkHover: #8b96ae;
+  --fillBottomHover: #79a1e2;
+  --fillLightActive: #9faaba;
+  --fillDarkActive: #818ca1;
+  --fillBottomActive: #6888bb;
+  --textActive: #000000;
+  --innerBorderActive: #7692c3;
+}
+.darkAccent {
+  --fillLight: #535b67;
+  --fillDark: #212836;
+  --fillBottom: #5177b8;
+  --innerBorder: #4e6ca3;
+  --text: #FFFFFF;
+  --border: #080d21;
+  --glow: #374c71;
+  --fillLightHover: #6c7480;
+  --fillDarkHover: #1c222e;
+  --fillBottomHover: #5888db;
+  --fillLightActive: #515760;
+  --fillDarkActive: #10141b;
+  --fillBottomActive: #385382;
+  --textActive: #E5E5E5;
+  --innerBorderActive: #455e8b;
+}
+.red {
+  --fillLight: #d96c62;
+  --fillDark: #aa2317;
+  --fillBottom: #e3665a;
+  --innerBorder: #ee9188;
+  --text: #FFFFFF;
+  --border: #310e0b;
+  --glow: #98261c;
+  --fillLightHover: #f27569;
+  --fillDarkHover: #9f0f02;
+  --fillBottomHover: #d86d55;
+  --fillLightActive: #d4655b;
+  --fillDarkActive: #620a02;
+  --fillBottomActive: #ae5744;
+  --textActive: #E5E5E5;
+  --innerBorderActive: #d6827b;
+  --fillLightDisabled: #a7716c;
+  --fillDarkDisabled: #955a57;
+  --fillBottomDisabled: #c6827c;
+  --innerBorderDisabled: #bd9592;
+  --textDisabled: #b2b2b2;
+  --borderDisabled: #57322f;
+}
+.orange {
+  --fillLight: #ec783e;
+  --fillDark: #bb5826;
+  --fillBottom: #eb7b43;
+  --innerBorder: #f69b6e;
+  --text: #FFFFFF;
+  --border: #341201;
+  --glow: #824628;
+  --fillLightHover: #fc864b;
+  --fillDarkHover: #a74d21;
+  --fillBottomHover: #f68e5a;
+  --fillLightActive: #d87442;
+  --fillDarkActive: #803c1a;
+  --fillBottomActive: #db7b4b;
+  --textActive: #E5E5E5;
+  --innerBorderActive: #d0855f;
+  --fillLightDisabled: #d39575;
+  --fillDarkDisabled: #be8467;
+  --fillBottomDisabled: #d49576;
+  --innerBorderDisabled: #cda998;
+  --textDisabled: #b2b2b2;
+  --borderDisabled: #7b5443;
+}
+.yellow {
+  --fillLight: #eeeb4e;
+  --fillDark: #bbb937;
+  --fillBottom: #e7e450;
+  --innerBorder: #f7f573;
+  --text: #000000;
+  --border: #222101;
+  --glow: #b2b02c;
+  --fillLightHover: #fbf84d;
+  --fillDarkHover: #a4a223;
+  --fillBottomHover: #efed43;
+  --fillLightActive: #dddb5e;
+  --fillDarkActive: #858320;
+  --fillBottomActive: #bdbb3e;
+  --textActive: #000000;
+  --innerBorderActive: #d5d363;
+  --fillLightDisabled: #d8d66d;
+  --fillDarkDisabled: #bebd5b;
+  --fillBottomDisabled: #d9d76e;
+  --innerBorderDisabled: #caca96;
+  --textDisabled: #525252;
+  --borderDisabled: #68673f;
+}
+.lime {
+  --fillLight: #78ec3e;
+  --fillDark: #5fbe30;
+  --fillBottom: #9cf66e;
+  --innerBorder: #8df659;
+  --text: #000000;
+  --border: #0d2202;
+  --glow: #398315;
+  --fillLightHover: #8af853;
+  --fillDarkHover: #4c9c25;
+  --fillBottomHover: #90f05f;
+  --fillLightActive: #75d247;
+  --fillDarkActive: #438721;
+  --fillBottomActive: #7ee44b;
+  --textActive: #000000;
+  --innerBorderActive: #78d24c;
+  --fillLightDisabled: #8edd67;
+  --fillDarkDisabled: #77bb54;
+  --fillBottomDisabled: #94d474;
+  --innerBorderDisabled: #abda94;
+  --textDisabled: #525252;
+  --borderDisabled: #435439;
+}
+.green {
+  --fillLight: #138730;
+  --fillDark: #0a561f;
+  --fillBottom: #0e802a;
+  --innerBorder: #1e9d3e;
+  --text: #FFFFFF;
+  --border: #001205;
+  --glow: #0b6924;
+  --fillLightHover: #1fa741;
+  --fillDarkHover: #08501d;
+  --fillBottomHover: #1da940;
+  --fillLightActive: #1a8836;
+  --fillDarkActive: #074417;
+  --fillBottomActive: #187c31;
+  --textActive: #E5E5E5;
+  --innerBorderActive: #1e8b3a;
+  --fillLightDisabled: #3a7248;
+  --fillDarkDisabled: #245632;
+  --fillBottomDisabled: #307d43;
+  --innerBorderDisabled: #3d7e4d;
+  --textDisabled: #b2b2b2;
+  --borderDisabled: #1a3421;
+}
+.cyan {
+  --fillLight: #32dbc7;
+  --fillDark: #2bae9f;
+  --fillBottom: #40e7d3;
+  --innerBorder: #75efe1;
+  --text: #000000;
+  --border: #042e29;
+  --glow: #14786c;
+  --fillLightHover: #57f3e1;
+  --fillDarkHover: #259d8f;
+  --fillBottomHover: #3ee3cf;
+  --fillLightActive: #48cabb;
+  --fillDarkActive: #1d7a6f;
+  --fillBottomActive: #34bdad;
+  --textActive: #000000;
+  --innerBorderActive: #6dd4c8;
+  --fillLightDisabled: #60cfc2;
+  --fillDarkDisabled: #51b1a6;
+  --fillBottomDisabled: #71d4c9;
+  --innerBorderDisabled: #92ded5;
+  --textDisabled: #525252;
+  --borderDisabled: #1d4641;
+}
+.blue {
+  --fillLight: #4e6eee;
+  --fillDark: #2a49c1;
+  --fillBottom: #4b69e0;
+  --innerBorder: #6c8aff;
+  --text: #FFFFFF;
+  --border: #080d21;
+  --glow: #2f47a5;
+  --fillLightHover: #637de5;
+  --fillDarkHover: #1c37a3;
+  --fillBottomHover: #4363e0;
+  --fillLightActive: #586ec7;
+  --fillDarkActive: #193297;
+  --fillBottomActive: #3e59c8;
+  --textActive: #E5E5E5;
+  --innerBorderActive: #6076d0;
+  --fillLightDisabled: #7288de;
+  --fillDarkDisabled: #4f67c7;
+  --fillBottomDisabled: #6f84d6;
+  --innerBorderDisabled: #8d9fe6;
+  --textDisabled: #b2b2b2;
+  --borderDisabled: #2d3247;
+}
+.purple {
+  --fillLight: #ac36e3;
+  --fillDark: #7f24aa;
+  --fillBottom: #bc58eb;
+  --innerBorder: #cc68fa;
+  --text: #FFFFFF;
+  --border: #230133;
+  --glow: #6f1d94;
+  --fillLightHover: #c554f9;
+  --fillDarkHover: #6d1e91;
+  --fillBottomHover: #c764f6;
+  --fillLightActive: #a746d4;
+  --fillDarkActive: #581a76;
+  --fillBottomActive: #a343d0;
+  --textActive: #E5E5E5;
+  --innerBorderActive: #ac57d3;
+  --fillLightDisabled: #ad75c7;
+  --fillDarkDisabled: #995bb6;
+  --fillBottomDisabled: #b574d3;
+  --innerBorderDisabled: #c58ede;
+  --textDisabled: #b2b2b2;
+  --borderDisabled: #42284f;
+}
+.white {
+  --fillLight: #efefef;
+  --fillDark: #c0c0c0;
+  --fillBottom: #ededed;
+  --innerBorder: #f6f6f6;
+  --text: #000000;
+  --border: #0b0b0b;
+  --glow: #cacaca;
+  --fillLightHover: #FFFFFF;
+  --fillDarkHover: #a2a2a2;
+  --fillBottomHover: #f0efef;
+  --fillLightActive: #dedede;
+  --fillDarkActive: #8c8c8c;
+  --fillBottomActive: #d5d5d5;
+  --textActive: #000000;
+  --innerBorderActive: #e3e3e3;
+  --fillLightDisabled: #e3e3e3;
+  --fillDarkDisabled: #cfcfcf;
+  --fillBottomDisabled: #dcdcdc;
+  --innerBorderDisabled: #ececec;
+  --textDisabled: #525252;
+  --borderDisabled: #525252;
+}
+.gray {
+  --fillLight: #8f8f8f;
+  --fillDark: #656565;
+  --fillBottom: #989797;
+  --innerBorder: #b5b5b5;
+  --text: #FFFFFF;
+  --border: #0b0b0b;
+  --glow: #787878;
+  --fillLightHover: #9e9e9e;
+  --fillDarkHover: #565656;
+  --fillBottomHover: #999999;
+  --fillLightActive: #7a7a7a;
+  --fillDarkActive: #434343;
+  --fillBottomActive: #7d7d7d;
+  --textActive: #E5E5E5;
+  --innerBorderActive: #949494;
+  --fillLightDisabled: #7a7a7a;
+  --fillDarkDisabled: #5c5c5c;
+  --fillBottomDisabled: #848484;
+  --innerBorderDisabled: #898989;
+  --textDisabled: #b2b2b2;
+  --borderDisabled: #525252;
+}
+.black {
+  --fillLight: #2f2f2f;
+  --fillDark: #101010;
+  --fillBottom: #2d2d2d;
+  --innerBorder: #424242;
+  --text: #FFFFFF;
+  --border: #0b0b0b;
+  --glow: #1b1a1a;
+  --fillLightHover: #3f3f3f;
+  --fillDarkHover: #0d0d0d;
+  --fillBottomHover: #333333;
+  --fillLightActive: #232323;
+  --fillDarkActive: #010101;
+  --fillBottomActive: #171717;
+  --textActive: #E5E5E5;
+  --innerBorderActive: #2c2c2c;
+  --fillLightDisabled: #282828;
+  --fillDarkDisabled: #161616;
+  --fillBottomDisabled: #313131;
+  --innerBorderDisabled: #5e5e5e;
+  --textDisabled: #b2b2b2;
+  --borderDisabled: #525252;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+
+
+
+
+html{
+  background-image: url("/nostalgia field.jpg");
+  background-size: 100vw 100vh;
+  height:100px;
+  paint-order: stroke fill;
+  font-family: Verdana, Geneva, Tahoma, sans-serif, "Trebuchet MS";
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+.center{
+  background-color: #e6e6e6;
+  width:768px;
+  border: solid 2px #686868;
+  border-radius: 8px;
+  padding: 15px;
+
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+body{
+  display: block;
+  text-align: center ;
 }

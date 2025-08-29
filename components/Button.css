@@ -1,0 +1,111 @@
+@import url("../app/globals.css");
+
+.Button{
+    text-align: center;
+    vertical-align: center;
+    font-size: 11pt;
+    font-family:inherit;
+    margin: 0px;
+    color: var(--text);
+    min-height: 24px;
+    min-width: 48px;
+    background:none;
+    border:solid 1px #00000000;
+    border-radius: 4px;
+    position:relative;
+    padding-left:14px;
+    padding-right:14px;
+    align-content: center;
+}
+
+.ButtonBorder{
+    width: fit-content;
+    border: solid var(--border) 1px;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 0;
+    font-size: 11pt;
+    background:none;
+    position:relative;
+    z-index:0;
+}
+
+.ButtonBackground {
+    background-image: linear-gradient(
+        var(--fillLight) 45%,
+        var(--fillDark) 50%,
+        90%,
+        var(--fillBottom) 99%
+    );
+    min-height: 24px;
+    min-width: 48px;
+    width:auto;
+    border: solid var(--innerBorder) 1px;
+    border-radius: 4px;
+    position:absolute;
+    z-index:-1;
+    top:0;
+    left:0;
+    transition: 0.6s;
+    padding-left: 14px;
+    padding-right:14px;
+    color:#00000000;
+}
+
+.Button:hover ~ .ButtonBackground{
+    transition: 0.2s;
+    box-shadow: 0 0 12px var(--glow);
+    background-image: linear-gradient(
+        var(--fillLightHover) 45%,
+        var(--fillDarkHover) 50%,
+        85%,
+        var(--fillBottomHover) 99%
+    );
+    opacity:1;
+    cursor:pointer;
+}
+
+.Button:active{
+    color: var(--textActive);
+}
+
+.Button:active ~ .ButtonBackground {
+    background-image: linear-gradient(
+        var(--fillLightActive) 45%,
+        var(--fillDarkActive) 50%,
+        85%,
+        var(--fillBottomActive) 99%
+    );
+    border-color: var(--innerBorderActive)
+}
+
+.Button.TextBordered{
+    -webkit-text-stroke-color: var(--border);
+    -webkit-text-stroke-width: 2px;
+    color:#FFFFFF
+}
+
+.ButtonBorder:disabled{
+    cursor:not-allowed;
+    border-color: var(--borderDisabled);
+}
+
+.ButtonBorder:disabled .Button{
+    color:var(--textDisabled);
+}
+
+.ButtonBorder:disabled .ButtonBackground{
+    background-image: linear-gradient(
+        var(--fillLightDisabled) 45%,
+        var(--fillDarkDisabled) 50%,
+        85%,
+        var(--fillBottomDisabled) 99%
+    );
+    border-color: var(--innerBorderDisabled);
+    box-shadow:none;
+}
+
+.ButtonBorder:disabled .Button.TextBordered{
+    color:#b2b2b2;
+    -webkit-text-stroke-color: var(--borderDisabled);
+}
