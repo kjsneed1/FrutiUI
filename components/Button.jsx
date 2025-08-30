@@ -1,11 +1,12 @@
 import "./Button.css";
 
 export default function Button({
-    children = "button",
+    children = "Button",
     color = "default",
     borderText = false,
     size = "default",
-    circle = false,
+    shape = "default",
+    transparent,
     onClick,
     disabled,
 }) {
@@ -42,27 +43,15 @@ export default function Button({
             padding: 22,
         },
     };
-
-    let sizes = sizeOpt[size];
-
-    let circText = "rectangle";
-    sizes.outerBorderRadius = 5;
-    sizes.innerBorderRadius = 4;
-    if (circle) {
-        circText = "circle";
-        sizes.outerBorderRadius = 21;
-        sizes.innerBorderRadius = 20;
-        sizes.padding = 7;
-        sizes.minWidth = 20;
-    }
+    
 
     return (
         <>
-            <button className={`ButtonBorder ${color}`} onClick={onClick} disabled={disabled}>
-                <div className={`Button ${color}${borderText ? " TextBordered" : ""}`} disabled={disabled}>{children}</div>
+            <button className={`ButtonBorder ${color} ${size} ${shape}`} onClick={onClick} disabled={disabled}>
+                <div className={`Button ${color}${borderText ? " TextBordered" : ""} ${size} ${shape}`} disabled={disabled}>{children}</div>
                 <div
                     disabled={disabled}
-                    className={`ButtonBackground ${color}`}>
+                    className={`ButtonBackground ${color}${transparent ? " Transparent" : ""} ${size} ${shape}`}>
                     {children}
                 </div>
             </button>
